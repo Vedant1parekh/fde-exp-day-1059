@@ -8,18 +8,19 @@ sqlite3 legacy_bank.db
 .schema accounts
 .schema transactions
 SELECT customer_id, full_name, phone_raw FROM customers;
+SELECT * FROM customers;
 ```
 
-| Table | Column | Type | Notes |
-|---|---|---|---|
-| `accounts` | `balance_cents` | INTEGER | Stored as cents, not dollars — legacy convention. Divide by 100 before displaying to a customer. |
-| `customers` | `created_date` | TEXT | Free-text, not a real DATE type — don't assume it parses cleanly. |
-| `customers` | `phone_raw` | | |
-| `customers` | `email` | | |
-| `accounts` | `account_type` | | |
-| `accounts` | `status` | | |
-| `transactions` | `amount_cents` | | |
-| `transactions` | `description` | | |
-| `transactions` | `txn_date` | | |
+| Table          | Column          | Type    | Notes                                                                                            |
+| -------------- | --------------- | ------- | ------------------------------------------------------------------------------------------------ |
+| `accounts`     | `balance_cents` | INTEGER | Stored as cents, not dollars — legacy convention. Divide by 100 before displaying to a customer. |
+| `customers`    | `created_date`  | TEXT    | Free-text, not a real DATE type — don't assume it parses cleanly.                                |
+| `customers`    | `phone_raw`     |         |                                                                                                  |
+| `customers`    | `email`         |         |                                                                                                  |
+| `accounts`     | `account_type`  |         |                                                                                                  |
+| `accounts`     | `status`        |         |                                                                                                  |
+| `transactions` | `amount_cents`  |         |                                                                                                  |
+| `transactions` | `description`   |         |                                                                                                  |
+| `transactions` | `txn_date`      |         |                                                                                                  |
 
 Add rows for anything else you find that isn't listed above — this table isn't meant to be exhaustive by construction, it's meant to capture what you actually discover.
